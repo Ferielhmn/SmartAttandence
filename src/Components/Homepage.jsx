@@ -4,7 +4,7 @@ import "../Styles/Homepage.css";
 function Homepage({ onSingUpClick }){
 return(
 <div className="main">
-    <div className="main-left">
+    <div className="main-top">
 
 <h1>SmartAttendance</h1>
 <p className="text1">Authorized users only -</p>
@@ -12,21 +12,26 @@ return(
 
 
     </div>
-<div className="main-right">
+<div className="main-buttom">
     <div className='box'>
 <h1>User Account</h1>
  <form action='' >
 
- <input className='input'  type ='text' placeholder='User Name'  /> 
+ <select className='input'>
+  <option value="">Student</option>
+  <option value="student">Student</option>
+  <option value="administration">Administrator</option>
+  <option value="teacher">Teacher</option>
+</select>
   
   <br></br>
  
-<input className='input'  type ='password' placeholder='Password' />
+<input className='input'  type ='text' placeholder='First Name' />
  
 <br></br>
- <div className='remember'>
-<input className='check' type='checkbox' id='remember'/> <label className='checkboxtext' for ='remember' >Remember Me</label>
-</div>
+<input className='input'  type ='text' placeholder='Last Name' />
+<br></br>
+
 <button onClick={onSingUpClick}>Sing Up</button>
 
  </form>

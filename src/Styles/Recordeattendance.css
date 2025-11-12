@@ -10,33 +10,33 @@
     width:100% ;
     height:14vh ;
     display: flex;
-    background: linear-gradient(to right, #3C89DB, #8EC5FC);
+ 
+}
+
+.nav-left h1{
+    width: 40%;
+    margin-left: 18px;
+    margin-top: 17px;
+    display: flex;
+  
+    font-family:'Mochiy Pop One',sans-serif ;
+    font-size: 25px;
+    color:#3C89DB;
+   
+    
+}
+
+.nav-right{
+width: 60%;
+text-align: right;
+display: flex;
+    flex-direction: row;
+     justify-content: flex-end;
+   gap: 20px;
+   margin-bottom: 22px;
    
 }
 
-.nav-left{
-    width: 90%;
-    margin-left: 18px;
-    margin-top: 17px;
-    
-    font-family:'Mochiy Pop One',sans-serif ;
-    font-size: 13.5px;
-    color: #FFFFFF;
-}
-
-.nav-right button{
-width: 10%;
-text-align: right;
-margin-right: 40px;
- margin-top: 28px;
- font-size: 15px;
- color:#FFFFFF;
- font-family:'Mochiy Pop One',sans-serif ;
-cursor: pointer;
-border:none;
-background-color: transparent;
-
-}
 
 .mainy{
     width: 100%;
@@ -47,8 +47,9 @@ background-color: transparent;
 }
 .title-main h1{
 font-size: 20px;
-    margin-left: 360px;
+    margin-left: 30px;
     padding: 20px;
+    margin-top: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color:rgb(94, 93, 93);
  
@@ -58,19 +59,23 @@ font-size: 20px;
   width: 200vh;
   
      border-collapse: collapse; 
-     margin-top: 10px;
+     margin-top: 7px;
     margin-left: 7.5px;
+    background-color: aqua;
      
 }
 
  th{
-   background: #8EC5FC;
+   border :1px solid black;
     padding: 12px;
-    border :1px solid black;
+   
     border-collapse: collapse;
+   
 }
  tr{
-    border:1px solid black;
+   border:1px solid black;
+    background: #8EC5FC;
+  
  }
  tbody{
 
@@ -104,3 +109,46 @@ margin-left: 2px;
  color:#FFFFFF;
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
+.addStudent{
+     width: 198px;
+    height: 38px;
+
+ display: flex;          
+    align-items: center;    
+    gap: 10px;               
+    padding: 8px 10px;   
+
+    margin-left: 1070px;
+    margin-top: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #3C89DB ;
+    color:#FFFFFF ;
+  background: #4897e6;
+    font-size: 20px;
+    padding: 1px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.click_report{
+  width: 198px;
+    height: 38px;
+      gap: 2px; 
+  margin-left: 1070px;
+    border-radius: 10px;
+    outline: none;
+    color:#FFFFFF ;
+      border: 1px solid #3C89DB ;
+  background: #4897e6;
+   font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    margin-top: 7px;
+     padding: 8px 10px; 
+
+}
+
+.addStudent:hover{
+    color: #3C89DB;
+    background-color:#FFFFFF;
+}
