@@ -121,12 +121,27 @@ margin-top: 20px;
   justify-content: center;
   align-items: flex-start;
 }
-
+.parttop{
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+}
 .parttop h1 {
   font-family: 'Mochiy Pop One', sans-serif; 
   color: #3C89DB; 
   font-size: 25px;
   margin-bottom: 5px;
+}
+.parttop button{
+  background: #3C89DB;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 600px;
 }
 
 .partbutton {

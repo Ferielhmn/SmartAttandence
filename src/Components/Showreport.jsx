@@ -8,14 +8,17 @@ import participationIcon from "../Icons/participation.png";
 import studentsIcon from "../Icons/students.png";
 import ReportChart from "./ReportChart";
 
-function Showreport({ totalStudents, avgAbsences, avgParticipation, attendancePercentage }) {
+function Showreport({ totalStudents, avgAbsences, avgParticipation, attendancePercentage, module ,onBackpageclickk}) {
   return (
     <div className="Showreport">
       <div className='partone'>
         <div className='parttop'>
           <h1>Smartattandence</h1>
+          <button onClick={onBackpageclickk}>menu</button>
         </div>
-        <p className='partbutton'>Reports</p>
+
+      
+        <p className='partbutton'>Reports - {module}</p>
       </div>
 
       <div className='parttwo'>
@@ -53,15 +56,16 @@ function Showreport({ totalStudents, avgAbsences, avgParticipation, attendancePe
         </ul>
 
       </div>
-     <ReportChart
-  totalStudents={Number(totalStudents)}
-  avgAbsences={Number(avgAbsences)}
-  avgParticipation={Number(avgParticipation)}
-  attendancePercentage={Number(attendancePercentage)}
-/>
+
+      <ReportChart
+        totalStudents={Number(totalStudents)}
+        avgAbsences={Number(avgAbsences)}
+        avgParticipation={Number(avgParticipation)}
+        attendancePercentage={Number(attendancePercentage)}
+      />
 
     </div>
-  
+
   );
 }
 

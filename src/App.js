@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import Recordattendence from "./Components/Recordattendance";
+import Recordattendance from "./Components/Recordattendance";
 import Addstudent from "./Components/Addstudent";
 import Homepage from "./Components/Homepage";
 import Showreport from "./Components/Showreport";
 import Welcome from "./Components/Welcome";
-
+import Menu from "./Components/Menu";
 import "./App.css";
 
 function App() {
@@ -102,12 +102,63 @@ function App() {
   return (
     <div>
       {page === "welcome" && <Welcome onSingUpClick={() => setPage("home")} />}
-      {page === "home" && <Homepage onSingUpClick={() => setPage("record")} />}
+      {page === "home" && <Homepage onSingUpClick={() => setPage("menu")} />}
+      {page === "menu" && <Menu setPage={setPage} />}
+
+      {/* RECORD PAW */}
+      {page === "record-paw" && (
+        <Recordattendance
+          students={students}
+          participation={participation}
+          hndelabsences={hndelabsences}
+          onBackpageclickk={() => setPage("menu")}
+          onAddStudnetClickk={() => setPage("add")}
+          onaddtable={() => setPage("report-paw")}
+          module="PAW"
+        />
+      )}
+
+      {/* RECORD GL */}
+      {page === "record-gl" && (
+        <Recordattendance
+          students={students}
+          participation={participation}
+          hndelabsences={hndelabsences}
+          onBackpageclickk={() => setPage("menu")}
+          onAddStudnetClickk={() => setPage("add")}
+          onaddtable={() => setPage("report-gl")}
+          module="GL"
+        />
+      )}
+
+      {/* REPORT PAW */}
+      {page === "report-paw" && (
+        <Showreport
+          totalStudents={totalStudents}
+          avgAbsences={avgAbsences}
+          avgParticipation={avgParticipation}
+          attendancePercentage={attendancePercentage}
+          module="PAW"
+          onBackpageclickk={() => setPage("menu")}
+        />
+      )}
+
+      {/* REPORT GL */}
+      {page === "report-gl" && (
+        <Showreport
+          totalStudents={totalStudents}
+          avgAbsences={avgAbsences}
+          avgParticipation={avgParticipation}
+          attendancePercentage={attendancePercentage}
+          module="GL"
+          onBackpageclickk={() => setPage("menu")}
+        />
+      )}
 
       {page === "record" && (
-        <Recordattendence
+        <Recordattendance
           students={students}
-          onAddStudnetClickk={() => setPage("add")}
+          onAddStudnetClickk={() => setPage("menu")}
           onBackpageclickk={() => setPage("home")}
           onaddtable={() => setPage("report")}
           participation={participation}
@@ -132,6 +183,7 @@ function App() {
           avgAbsences={Number(avgAbsences)}
           avgParticipation={Number(avgParticipation)}
           attendancePercentage={Number(attendancePercentage)}
+          onBackpageclickk={() => setPage("menu")}
         />
       )}
     </div>
