@@ -1,0 +1,165 @@
+/* =======================
+        GLOBAL PAGE
+======================= */
+.global {
+    width: 100%;
+    height: 100vh;
+    background: #f5f7fb;
+    font-family: "Poppins", sans-serif;
+    color: #1e3f8a;
+}
+
+/* =======================
+         NAVBAR
+======================= */
+.navbar {
+    width: 100%;
+    height: 12vh;
+    background: #eaeef5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.navbar button {
+    background: #2d86db;
+    border: none;
+    color: white;
+    padding: 8px 22px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.navbar button:hover {
+    background: #1b6bc6;
+    transform: scale(1.05);
+}
+
+/* =======================
+        MAIN CONTENT
+======================= */
+.mainO {
+    width: 100%;
+    height: 88vh;
+    padding: 30px 0;
+}
+
+/* TITLES */
+.groupes, .reports {
+    margin-left: 60px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* =======================
+        CARDS GRID
+======================= */
+.row-cards-groupes,
+.row-cards-reports {
+    display: flex;
+    justify-content: center;   /* 👍 CENTRER EN DESKTOP */
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* =======================
+           CARD
+======================= */
+.cart {
+    width: 260px;
+    height: 120px;
+    background: #2d86db;
+    border-radius: 12px;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.20);
+    transition: 0.25s ease-in-out;
+
+    /* Animation d'apparition */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.5s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cart img {
+    width: 50px;
+    margin-bottom: 8px;
+}
+
+.cart p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.cart:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.25);
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .navbar h1 {
+        font-size: 18px;
+    }
+
+    .navbar button {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+
+    .groupes, .reports {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+
+    /* Cartes centrées + larges */
+    .row-cards-groupes,
+    .row-cards-reports {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cart {
+        width: 90%;
+        height: 100px;
+    }
+
+    .cart img {
+        width: 40px;
+    }
+
+    .cart p {
+        font-size: 15px;
+    }
+}

@@ -14,7 +14,7 @@ function Showreport({ totalStudents, avgAbsences, avgParticipation, attendancePe
       <div className='partone'>
         <div className='parttop'>
           <h1>Smartattandence</h1>
-          <button onClick={onBackpageclickk}>menu</button>
+          <button onClick={onBackpageclickk}>Back</button>
         </div>
 
       

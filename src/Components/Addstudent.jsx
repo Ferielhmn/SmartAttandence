@@ -28,8 +28,8 @@ function Addstudent({
             <input
               className="add-input"
               type="text"
-              name="First_Name"
-              value={addinput.First_Name}
+              name="first_name"
+              value={addinput.first_name}
               placeholder="First Name"
               onChange={addtotable}
             />
@@ -38,8 +38,8 @@ function Addstudent({
             <input
               className="add-input"
               type="text"
-              name="Last_Name"
-              value={addinput.Last_Name}
+              name="last_name"
+              value={addinput.last_name}
               placeholder="Last Name"
               onChange={addtotable}
             />

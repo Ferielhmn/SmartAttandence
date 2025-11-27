@@ -6,6 +6,12 @@
   flex-direction: column;
   gap: 30px;
 }
+.container h1{
+  font-family:  'Mochiy Pop One', sans-serif; 
+  color:#2f76c3;
+  font-size: 20px;
+  padding-top: 5px;
+}
 
 /* Titles */
 .section-title {
