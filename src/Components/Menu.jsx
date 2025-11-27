@@ -35,12 +35,14 @@ function DashboardCards({ setPage ,setModule}) {
       <h3 className="section-title">Reports</h3>
       <div className="row-cards">
 
-        <div className="card" onClick={() => setPage("report-paw")}>
+        <div className="card" onClick={() =>{ setModule("PAW");
+  setPage("report-all");}}>
           <img src={pawRepIcon} alt="paw report" />
           <p>PAW Report</p>
         </div>
 
-        <div className="card" onClick={() => setPage("report-gl")}>
+        <div className="card" onClick={() => {setModule("GL");
+  setPage("report-all");}}>
           <img src={glRepIcon} alt="gl report" />
           <p>GL Report</p>
         </div>

@@ -53,6 +53,27 @@ function App() {
         .catch((err) => console.error("Error loading students:", err));
     }
   }, [module, group]);
+  useEffect(() => {
+    if (module && page === "report-all") {
+      Promise.all([
+        fetch(
+          `http://localhost/smart_attendance_api/students.php?action=list&module=${module}&group_id=1`
+        ).then((r) => r.json()),
+        fetch(
+          `http://localhost/smart_attendance_api/students.php?action=list&module=${module}&group_id=2`
+        ).then((r) => r.json()),
+      ])
+        .then(([g1, g2]) => {
+          const all = [...g1, ...g2].map((s) => ({
+            ...s,
+            Absences: Number(s.Absences),
+            Participation: Number(s.Participation),
+          }));
+          setStudents(all);
+        })
+        .catch((err) => console.error("Error loading ALL groups:", err));
+    }
+  }, [module, page]);
 
   // ===== FUNCTIONS =====
   const handleLogin = (selectedRole) => {
@@ -321,6 +342,16 @@ function App() {
           avgParticipation={Number(avgParticipation)}
           attendancePercentage={Number(attendancePercentage)}
           onBackpageclickk={() => setPage("record")}
+        />
+      )}
+      {page === "report-all" && (
+        <Showreport
+          totalStudents={totalStudents}
+          avgAbsences={avgAbsences}
+          avgParticipation={avgParticipation}
+          attendancePercentage={attendancePercentage}
+          module={module}
+          onBackpageclickk={() => setPage("menu")}
         />
       )}
       {page === "studentmenu" && (
