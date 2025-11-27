@@ -4,7 +4,7 @@ import pawIcon from "../Icons/paw.png";
 import glIcon from "../Icons/gl.png";
 import pawRepIcon from "../Icons/pawrep.png";
 import glRepIcon from "../Icons/glrep.png";
-function Groupes({module,setPage,onBackpageclickk, setGroup}){
+function Groupes({module,setPage,onBackpageclickk, setGroup,onaddtable,onaddtablee}){
     return(
         <div className="global">
           <div className="navbar">
@@ -35,12 +35,12 @@ function Groupes({module,setPage,onBackpageclickk, setGroup}){
               <h3 className="reports">Reports</h3>
               <div className="row-cards-reports">
         
-                <div className="cart" onClick={() => setPage(`record-${module.toLowerCase()}`)}>
+                <div className="cart" onClick={() => setPage(onaddtable)}>
                   <img src={pawRepIcon} alt="paw report" />
                   <p>Groupe 1</p>
                 </div>
         
-                <div className="cart" onClick={() => setPage(`record-${module.toLowerCase()}`)}>
+                <div className="cart" onClick={() => setPage(onaddtablee)}>
                   <img src={glRepIcon} alt="gl report" />
                   <p> Groupe 2</p>
                 </div>

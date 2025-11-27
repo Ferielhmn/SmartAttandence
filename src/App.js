@@ -36,21 +36,22 @@ function App() {
   }, []);
   //courige 01111//
   useEffect(() => {
-    if (!module || !group) return;
-    fetch(
-      `http://localhost/smart_attendance_api/students.php?action=list&module=${module}&group_id=${group}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        const studentsArray = Array.isArray(data) ? data : data.data || [];
-        const studentsNumeric = studentsArray.map((s) => ({
-          ...s,
-          Absences: Number(s.Absences),
-          Participation: Number(s.Participation),
-        }));
-        setStudents(studentsNumeric);
-      })
-      .catch((err) => console.error("Error loading students:", err));
+    if (module && group) {
+      fetch(
+        `http://localhost/smart_attendance_api/students.php?action=list&module=${module}&group_id=${group}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          const studentsArray = Array.isArray(data) ? data : data.data || [];
+          const studentsNumeric = studentsArray.map((s) => ({
+            ...s,
+            Absences: Number(s.Absences),
+            Participation: Number(s.Participation),
+          }));
+          setStudents(studentsNumeric);
+        })
+        .catch((err) => console.error("Error loading students:", err));
+    }
   }, [module, group]);
 
   // ===== FUNCTIONS =====
@@ -247,6 +248,8 @@ function App() {
           onBackpageclickk={() => setPage("menu")}
           setPage={setPage}
           setGroup={setGroup}
+          onaddtable={() => setPage("report-paw")}
+          onaddtablee={() => setPage("report-gl")}
         />
       )}
       {page === "record-paw" && (
